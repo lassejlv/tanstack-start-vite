@@ -1,5 +1,6 @@
 import { z } from 'zod/v4'
 import { base } from '.'
+import { ORPCError } from '@orpc/server'
 
 const schema = z.object({
   name: z.string(),
@@ -13,8 +14,12 @@ export const router = {
     return { message: `Hello, ${input.name}!` }
   }),
   users: base.handler(async ({ context }) => {
-    const { db } = context
-    const users = await db.query.users.findMany()
-    return users
+    try {
+      const { db } = context
+      const users = await db.query.userTable.findMany()
+      return users
+    } catch (error) {
+      throw new ORPCError('BAD_REQUEST', { message: (error as Error).message || 'Failed to fetch users' })
+    }
   }),
 }

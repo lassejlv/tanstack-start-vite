@@ -8,10 +8,11 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src'),
-    },
-  },
+  // resolve: {
+  //   alias: {
+  //     '@': resolve(__dirname, 'src'),
+  //     db: resolve(__dirname, 'src/db/index.ts'),
+  //   },
+  // },
   plugins: [tailwindcss(), tsConfigPaths(), tanstackStart({ target: 'bun' })],
 })

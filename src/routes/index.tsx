@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import { tanstackClient } from '@/rpc/client'
 import { useQuery } from '@tanstack/react-query'
 import { createFileRoute } from '@tanstack/react-router'
@@ -19,7 +20,7 @@ function RouteComponent() {
       ) : (
         <>
           <p>{data && data.message}</p>
-          <button onClick={() => refetch()}>Refetch</button>
+          <Button onClick={() => refetch()}>Refetch</Button>
         </>
       )}
 

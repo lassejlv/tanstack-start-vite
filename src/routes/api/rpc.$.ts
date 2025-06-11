@@ -1,6 +1,7 @@
 import { router } from '@/rpc/router'
 import { RPCHandler } from '@orpc/server/fetch'
 import { createServerFileRoute } from '@tanstack/react-start/server'
+import { db } from 'db'
 
 const handler = new RPCHandler(router)
 
@@ -9,6 +10,7 @@ async function handle({ request }: { request: Request }) {
     prefix: '/api/rpc',
     context: {
       request,
+      db,
     },
   })
 

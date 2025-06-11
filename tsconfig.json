@@ -10,7 +10,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "prisma": ["src/db/index.ts"]
+      "db": ["src/db/index.ts"]
     }
   }
 }
