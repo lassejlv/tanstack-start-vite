@@ -73,6 +73,7 @@
     "zod": "^3.25.62"
   },
   "devDependencies": {
+    "@types/bun": "^1.2.16",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "drizzle-kit": "^0.31.1",
