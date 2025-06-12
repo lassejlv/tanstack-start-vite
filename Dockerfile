@@ -12,6 +12,7 @@ ARG DATABASE_URL
 ARG VITE_APP_URL
 
 RUN bun run build
+RUN bun drizzle-kit push
 
 EXPOSE 3000
 
