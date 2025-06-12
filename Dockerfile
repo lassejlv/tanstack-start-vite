@@ -8,6 +8,9 @@ RUN bun install --frozen-lockfile
 
 COPY . .
 
+ARG DATABASE_URL
+ARG VITE_APP_URL
+
 RUN bun run build
 
 EXPOSE 3000
